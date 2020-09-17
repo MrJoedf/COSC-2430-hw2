@@ -42,7 +42,6 @@ int main(int argc, char *argv[]) {
         getline(s_stream, pDifficulty, ','); 
     
     temp->add((stoi(pID)),pName,pDifficulty);
-    //cout<<"Test"<<endl;
     }
   }
   }
@@ -52,9 +51,7 @@ int main(int argc, char *argv[]) {
     while(getline(commandFile,str)){
       if(str==""){continue;
       }else{
-        cout<<str<<endl;
         if((str.find("sort") != string::npos)) {
-          cout<<"SORTING!"<<endl;
         if(str=="sort problem_id increasing"){
           link.sort(1,0);
         }else if(str=="sort problem_id decreasing"){
@@ -69,7 +66,6 @@ int main(int argc, char *argv[]) {
           link.sort(3,1);
         }
         }else if((str.find("remove")!=string::npos)){
-          cout<<"REMOVING!"<<endl;
         if((str.find("pos")!=string::npos)){
             pos = str[str.find(':')+1]-'0'; 
             link.remove(4, "", pos);
@@ -96,7 +92,6 @@ int main(int argc, char *argv[]) {
             if (i != std::string::npos)
                prob.erase(i, s.length());
                 }
-          cout<<"PROB: "<<prob<<endl;
             stringstream probGet(prob);
             getline(probGet,probID, ',');
             getline(probGet, probName, ',');
@@ -106,29 +101,8 @@ int main(int argc, char *argv[]) {
         }
     }        
     }}
-  /*link.add(1, "Mr. Mee6","Easy");
-  link.add(5, "Test", "Easy");
-  link.add(2,"Look at me!", "Hard");
-  link.add(3, "Ooh he's tryin'!", "Medium");
-  link.add(4, "But he's failing!","Easy");
-  link.add(5, "Test", "Easy");
-  link.print();
-  //link.remove(2, "But he's failing!",0);
-  link.addPos(2, 37, "He eating beans!", "Medium");
-  link.remove(4, "2", 0);*/
-  cout<<"FINAL: "<<endl;
   outputFile<<link.print();
-  cout<<"NULL?:"<<(link.head==nullptr);
-  //link.sort(1,1);
-  //cout<<"SORTED  PRINT:"<<endl;
-  //link.remove(2, "Validate",3);
-  //link.print();
-  cout<<"SIZE: "<<link.size;
-  //cout<<"LINK SIZE: "<<link.size<<endl;*/
+
   return 1;
 }
 // ./main "input=input21.txt;command=command21.txt;output=output21.txt"
-// ./main "input=input22.txt;command=command22.txt;output=output22.txt"
-// ./main "input=input23.txt;command=command23.txt;output=output23.txt"
-// ./main "input=input29.txt;command=command29.txt;output=output29.txt"
-// ./main "input=input27.txt;command=command27.txt;output=output27.txt"
