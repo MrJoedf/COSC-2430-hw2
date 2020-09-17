@@ -7,16 +7,16 @@
 
 using namespace std;
 
-void linkedList::addPos(int pos, int id, string name, string difficulty){
+void linkedList::addPos(int pos, int id, string name, string difficulty){  
+  //condition to check if the problem's ID is already in the list
   problem *check = head;
   while(check!=nullptr){
       if(check->id==id){
-        cout<<"FOUND: "<<id<<endl;
         return;
       }
       check=check->next;
     }
-    
+     
   if((pos>=this->size) ){
     add(id,name,difficulty);
     return;
@@ -38,7 +38,7 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
     return;
   }
   
- //condition to check if prob.id is in ids vector
+
  problem *temp = new problem;
  temp->id = id;
  temp->name=name;
