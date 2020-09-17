@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <stdlib.h>
-
 using namespace std;
 
 void linkedList::addPos(int pos, int id, string name, string difficulty){  
