@@ -1,13 +1,7 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 #include <iostream>
-#include <fstream>
 #include <string>
-#include <vector>
-#include<stdio.h> 
-#include <string.h>
-#include <sstream>
-
 using namespace std;
 
 class problem{
@@ -37,8 +31,6 @@ class linkedList{
     void add(int id, string name, string difficulty);
     void sort(int choice, int direction);
     void remove(int choice, string data, int pos);
-    string print();
-
 };
 
 #endif
