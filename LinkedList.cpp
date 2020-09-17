@@ -49,25 +49,20 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
     temp->next=this->head;
     this->head=temp;
     this->size++;
-    //cout<<"THIS SIZE 2: "<<this->size<<endl;
   }else{
     if(this->head!=nullptr){
       problem *trav = head;
 
       for(int i=0; i<pos-1; i++){
-        //cout<<"KEEP GOING"<<endl;
         count++;
         trav = trav->next;
       }
-        //cout<<temp->id<<endl;
         problem *next = new problem;
         next = trav->next;
         trav->next=temp;
         temp->next=next;
         this->size++;
 
-        //cout<<"PROB NEXT: "<<temp->next->id<<endl;
-        //cout<<temp->next->next->id<<endl;
         cout<<"TEMP ID: "<<temp->id<<endl;
         cout<<"TEMP NEXT:"<<temp->next->id<<endl;
     
@@ -75,13 +70,10 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
       }else{
        add(id,name,difficulty);
       }
-      
   }
-
 }
 
   void linkedList::add(int id, string name, string difficulty){
-  
     problem *check = head;
     while(check!=nullptr){
       if(check->id==id){
@@ -124,13 +116,9 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
           if(test->id==stoi(data) && prev==nullptr){
             this->size--;
             problem *next = test->next;
-            cout<<"TEST CASE 1"<<endl;
-            //cout<<"NEXT ID:"<<test->next->id<<endl;
-            //cout<<"NEXT ID: "<<head->next->id<<endl;
             test = prev;
             head=next;
             delete test;
-            
             return;
           }else if(test->id==stoi(data)&& prev!=nullptr){
             problem *next = test->next;
@@ -140,7 +128,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
           }
         prev=test;
         test=test->next;
-
         }
           break;
     }
@@ -150,8 +137,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
     while(test!=nullptr){
       if ((test->name)==data){
         this->size--;
-        std::cout << "WORKS"<<endl;
-        cout<<"TEST NAME: "<<test->name<<endl;
         if(prev==nullptr){
           head = test->next;
         }else{
@@ -163,10 +148,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
         cout<<data<<endl;
         prev=test;
         test=test->next;
-        //problem *next = head->next->next;
-        //delete test;
-        //test = next;
-        //test=test->next; 
       }
       break;
     }
@@ -189,10 +170,7 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
         cout<<data<<endl;
         prev=test;
         test=test->next;
-        //problem *next = head->next->next;
-        //delete test;
-        //test = next;
-        //test=test->next; 
+
       }
       break;
   }
@@ -205,7 +183,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
         //problem *next = trav->next;
         if(pos==0 && head!=nullptr){
           this->size--;
-         cout<<"HEAD ID: "<<head->id<<endl;
          problem *next =head->next;
          delete head;
          head = next; 
@@ -217,9 +194,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
           
           }
           problem *next = trav->next;
-          /*cout<<"PREV ID: "<<prev->id<<endl;
-          cout<<"TRAV ID: "<<trav->id<<endl;
-          cout<<"NEXT ID: "<<next->id<<endl;*/
           delete trav;
           prev->next = next;
           this->size--;
