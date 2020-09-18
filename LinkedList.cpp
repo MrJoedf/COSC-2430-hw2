@@ -37,7 +37,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
     return;
   }
   
-
  problem *temp = new problem;
  temp->id = id;
  temp->name=name;
@@ -61,11 +60,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
         trav->next=temp;
         temp->next=next;
         this->size++;
-
-        cout<<"TEMP ID: "<<temp->id<<endl;
-        cout<<"TEMP NEXT:"<<temp->next->id<<endl;
-    
-        cout<<"NEXT ID: "<<next->id<<endl;
       }else{
        add(id,name,difficulty);
       }
@@ -76,7 +70,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
     problem *check = head;
     while(check!=nullptr){
       if(check->id==id){
-        cout<<"OOOH HE'S TRYIN'!"<<endl;
         return;
       }
       check=check->next;
@@ -156,8 +149,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
     while(test!=nullptr){
       if (test->difficulty==data){
         this->size--;
-        std::cout << "WORKS"<<endl;
-        cout<<"TEST NAME: "<<test->name<<endl;
         if(test==head){
           head = test->next;
         }else{
@@ -187,7 +178,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
          head = next; 
         }else{
           for(int i=0; i<pos;i++){
-            cout<<"TRAV ID: "<<trav->id<<endl;
             prev=trav;
             trav=trav->next;
           
@@ -203,7 +193,8 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
 break; }}
     }
 
-    //this Sort Function is based on the Bubble Sort function found at https://www.geeksforgeeks.org/bubble-sort-for-linked-list-by-swapping-nodes/ which was written by kalaikarthick
+  //this Sort Function is based on the Bubble Sort function found at https://www.geeksforgeeks.org/bubble-sort-for-linked-list-by-swapping-nodes/ 
+ //and was originally written by kalaikarthick
   void linkedList::sort(int choice, int direction){
     //0 = ascending, 1 = descending
         switch(choice){
