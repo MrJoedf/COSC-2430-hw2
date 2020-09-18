@@ -42,7 +42,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
  temp->name=name;
  temp->difficulty=difficulty;
 
-  int count =0;
   if(pos==0){
     temp->next=this->head;
     this->head=temp;
@@ -52,7 +51,6 @@ void linkedList::addPos(int pos, int id, string name, string difficulty){
       problem *trav = head;
 
       for(int i=0; i<pos-1; i++){
-        count++;
         trav = trav->next;
       }
         problem *next = new problem;
